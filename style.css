@@ -1,0 +1,421 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: built;
+    src: url('built titling bd.otf') format('truetype'), url('built titling bd.otf');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
+html, body {
+    background-color: #00030a; /* Cor de fundo do body e html */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove paddings padrão */
+    height: 100%; /* Garante que o body ocupe toda a altura da tela */
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #000000;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000; /* Garante que o nav fique acima de tudo */
+    height: 60px; /* Altura do nav (ajuste conforme necessário) */
+}
+
+nav a {
+    justify-content: right;
+}
+
+#logo1 {
+    height: 45px; 
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    padding-top: 15px;
+    margin-bottom: 15px;
+}
+
+#homeh2 {
+    margin-bottom: -30px;
+}
+
+h1, h2 {
+    font-family: "Anton", sans-serif;
+}
+
+h1, h2, p {
+    color: #fff;
+}
+
+p  {
+    font-family: "Instrument Sans", sans-serif;
+    margin: 0px;
+}
+
+/* Remoção completa dos estilos de lista no nav */
+nav ul {
+    list-style: none; /* Remove os marcadores de lista */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove paddings padrão */
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline; /* Garante que os itens fiquem na mesma linha */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.363);
+    border-radius: 5px;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #00030a; /* Cor de fundo padrão das seções */
+}
+
+#HOME, #NOSFORNECEMOS, #PRODUTOS, #QUEMSOMOS, #FEEDBACK, #CONTATO {
+    background: #00030a;
+    justify-content: center;
+}
+
+#HOME {
+    background-image: url("fundo1.jpg"); /* Imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    font-size: 25px;
+    height: 100vh; 
+    padding: 20px; /* Espaçamento interno */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Garante que nada ultrapasse os limites */
+    box-sizing: border-box; /* Inclui o padding no cálculo do tamanho */
+}
+
+#HOME::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.726); /* Camada escura com opacidade */
+    z-index: 0;
+}
+
+#HOME > * {
+    position: relative;
+    z-index: 1;
+    text-align: center; /* Centraliza o texto */
+    color: white; /* Garante que o texto seja visível sobre o fundo escuro */
+    padding: 20px; /* Espaçamento interno para o conteúdo */
+}
+
+/* Estilos para os cards */
+#MVV, #NOSFORNECEMOS {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* Contêiner de cards */
+.cards-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Estilo individual de cada card */
+.card, .cards {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #fff;
+}
+
+/* Estilo do título dentro do card */
+.card h2, .cards h2 {
+    color: #ffffff;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Estilo do parágrafo dentro do card */
+.card p, .cards figcaption {
+    color: #f7f7f7;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+/* Estilo da lista dentro do card de Valores */
+.card ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.card ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.card ul li::before {
+    content: "•";
+    margin-right: 2px;
+    font-size: 19px;
+}
+
+/* Efeito de hover para os cards */
+.card:hover, .cards:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para a seção Nós Fornecemos */
+#NOSFORNECEMOS {
+    padding: 50px 20px;
+}
+
+#QUEMSOMOS {
+    background-image: url("fundo2.png"); /* Imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 100vh; /* Altura de 70% da tela */
+    padding: 20px; /* Espaçamento interno */
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza o container na tela */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Garante que nada ultrapasse os limites */
+    box-sizing: border-box; /* Inclui o padding no cálculo do tamanho */
+}
+
+#QUEMSOMOS::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.589); /* Camada escura com opacidade */
+    z-index: 0;
+}
+
+#QUEMSOMOS > * {
+    position: relative;
+    z-index: 1;
+    text-align: center; /* Centraliza o texto */
+    color: white; /* Garante que o texto seja visível sobre o fundo escuro */
+    padding: 20px; /* Espaçamento interno para o conteúdo */
+}
+
+#quadrados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.cards {
+    background: linear-gradient(135deg, #020f1b, #02041d);
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    color: white; /* Cor do texto dos cards */
+}
+
+.cards figcaption {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    margin-left: 20px;
+}
+
+ul {
+    list-style: none; /* Remove os marcadores padrão */
+    padding: 0;
+    text-align: center; /* Centraliza o texto */
+}
+
+ul li {
+    display: flex;
+    align-items: center; /* Alinha o ponto e o texto na mesma linha */
+    justify-content: center; /* Centraliza horizontalmente */
+}
+
+ul li::before {
+    
+    margin-right: 2px; /* Ajuste a distância do texto */
+    font-size: 19px; /* Deixa o marcador no tamanho certo */
+}
+
+#home2 {
+    opacity: 15%;
+}
+
+.h1-produtos {
+    padding-bottom: 20px;
+}
+
+.h1-feedback {
+    font-size: 20px;
+    padding-bottom: 0px;
+}
+
+.h2-feedback {
+    margin-bottom: 15px;
+}
+
+.produtos-container {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1400px;
+    width: 100%;
+}
+
+.produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 400px;
+}
+
+.imgprodutos {
+    width: 100%;
+    max-width: 400px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5%;
+}
+
+.img-feedback {
+    width: 20px;
+    height: 20px;
+}
+
+.feedback-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1000px;
+}
+
+.feedback-card {
+    background: #061a3b;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    height: 180px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adiciona transição suave */
+}
+
+/* Efeito de hover nos cards de feedback */
+.feedback-card:hover {
+    transform: translateY(-10px); /* Move o card para cima */
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2); /* Adiciona uma sombra */
+    background: linear-gradient(135deg, #020f1b, #02041d); /* Gradiente similar ao de Quem Somos */
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+iframe {
+    margin: 20px;
+    width: 30%;
+    height: 30%;
+    border-radius: 5;
+}
+
+.logos {
+    width: 20px;
+}
+
+/* Media Query para telas menores (tablets e celulares) */
+@media (max-width: 768px) {
+    nav ul li a {
+        font-size: 14px; /* Reduz o tamanho da fonte em telas menores */
+    }
+
+    nav {
+        padding: 8px 10px; /* Reduz o padding para economizar espaço */
+    }
+
+    #logo1 {
+        height: 35px; /* Reduz o tamanho do logo em telas menores */
+    }
+}
+
+/* Media Query para telas muito pequenas (celulares pequenos) */
+@media (max-width: 480px) {
+    nav ul li a {
+        font-size: 12px; /* Fonte ainda menor para telas muito pequenas */
+    }
+
+    nav ul {
+        gap: 10px; /* Reduz o espaçamento entre os itens do menu */
+    }
+
+    #logo1 {
+        height: 30px; /* Logo ainda menor */
+    }
+}
