@@ -111,7 +111,7 @@ section {
 }
 
 #HOME {
-    background-image: url("fundo1.jpg"); /* Imagem de fundo */
+    background-image: url("imgs/fundo1.jpg"); /* Imagem de fundo */
     background-size: cover;
     background-position: center;
     position: relative;
@@ -218,7 +218,7 @@ section {
 }
 
 #QUEMSOMOS {
-    background-image: url("fundo2.png"); /* Imagem de fundo */
+    background-image: url("imgs/fundo2.png"); /* Imagem de fundo */
     background-size: cover;
     background-position: center;
     position: relative;

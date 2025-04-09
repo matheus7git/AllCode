@@ -12,7 +12,7 @@
     <header>
         <nav>
             <a href="#HOME">
-                <img src="allcode.png" id="logo1" alt="Logo da AllCode Systems">
+                <img src="imgs/allcode.png" id="logo1" alt="Logo da AllCode Systems">
             </a>
             <ul>
                 <li><a href="#HOME">HOME</a></li>
@@ -54,12 +54,12 @@
             <h1 class="h1-produtos">Produtos</h1>
             <div class="produtos-container">
                 <div class="produto">
-                    <img src="pro2.jpg" class="imgprodutos" alt="Sistema de segurança">
+                    <img src="imgs/pro2.jpg" class="imgprodutos" alt="Sistema de segurança">
                     <h2>Sistema de segurança</h2>
                     <p>A AllCode oferece um sistema de segurança inovador que integra tecnologia de ponta para proteger dados e infraestruturas críticas. Com monitoramento em tempo real, autenticação multifatorial e algoritmos avançados de criptografia.</p>
                 </div>
                 <div class="produto">
-                    <img src="pro1.jpg" class="imgprodutos" alt="Softwares diversificados">
+                    <img src="imgs/pro1.jpg" class="imgprodutos" alt="Softwares diversificados">
                     <h2>Softwares diversificados</h2>
                     <p>A AllCode desenvolve soluções de software personalizadas para atender às necessidades específicas de cada cliente, oferecendo ferramentas eficientes e inovadoras para otimizar processos e aumentar a produtividade.</p>
                 </div>
@@ -105,7 +105,7 @@
                 <div class="feedback-card">
                     <p>"Atendeu todas as minhas expectativas"</p>
                     <div class="user">
-                        <img src="amauri.png" alt="Foto de Amauri Vetore" class="img-feedback">
+                        <img src="imgs/amauri.png" alt="Foto de Amauri Vetore" class="img-feedback">
                         <div>
                             <h1 class="h1-feedback">Amauri Vetore</h1>
                             <p class="p-feedback">Dono de uma multinacional</p>
@@ -115,7 +115,7 @@
                 <div class="feedback-card">
                     <p>"Equipe muito atenciosa!"</p>
                     <div class="user">
-                        <img src="mulher1.jpg" alt="Foto de Claudia Ramos" class="img-feedback">
+                        <img src="imgs/mulher1.jpg" alt="Foto de Claudia Ramos" class="img-feedback">
                         <div>
                             <h1 class="h1-feedback">Claudia Ramos</h1>
                             <p class="p-feedback">Pequena empreendedora</p>
@@ -125,7 +125,7 @@
                 <div class="feedback-card">
                     <p>"Entregam antes do prazo!"</p>
                     <div class="user">
-                        <img src="alice.jpg" alt="Foto de Alice Faccioli" class="img-feedback">
+                        <img src="imgs/alice.jpg" alt="Foto de Alice Faccioli" class="img-feedback">
                         <div>
                             <h1 class="h1-feedback">Alice Faccioli</h1>
                             <p class="p-feedback">Criadora de um Blog</p>
@@ -169,5 +169,42 @@
             <p>Email: <a href="mailto:allcode.systems@gmail.com" style="color:white;">allcode.systems@gmail.com</a></p>
         </div>
     </footer>
+    <script>
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault(); // Previne o comportamento padrão
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                // Calcula a posição do elemento alvo
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const startPosition = window.pageYOffset;
+                const distance = targetPosition - startPosition;
+                const duration = 800; // Duração da animação em ms
+                let startTime = null;
+                
+                // Função de animação
+                function animation(currentTime) {
+                    if (startTime === null) startTime = currentTime;
+                    const timeElapsed = currentTime - startTime;
+                    const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+                    window.scrollTo(0, run);
+                    if (timeElapsed < duration) requestAnimationFrame(animation);
+                }
+                
+                // Função de easing para suavizar a animação
+                function easeInOutQuad(t, b, c, d) {
+                    t /= d/2;
+                    if (t < 1) return c/2*t*t + b;
+                    t--;
+                    return -c/2 * (t*(t-2) - 1) + b;
+                }
+                
+                requestAnimationFrame(animation);
+            }
+        });
+    });</script>
 </body>
 </html>
